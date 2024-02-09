@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+
+
+
+</head>
+
+<body class="serv">
+    <!-- --------------------------nav bar---------------------------- -->
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(114,47,250); color:white;">
+        <div class="container-fluid">
+            <a class="navbar-brand active" href="#"><img
+                    src="./images/—Pngtree—mobile banking handphone bank transfer_8447583.png" height="90px"
+                    width="150px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <buttom class="btn btn-outline-light me-2 active">Services</buttom>
+                    <button class="btn btn-outline-light me-2">Settings</button>
+                    <button class="btn btn-outline-light me-4">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- ------------------------------------------------------------- -->
+    <div class="text-center mt-4"><h2 id="head1">Welcome username</h2></div>
+    <!--  -->
+    <div class="row row-cols-1 row-cols-md-2 g-4 mx-5 mt-2 mb-5">
+        <div class="col">
+            <div class="card">
+                <img src="./images/deposit2.avif" class="card-img-top" alt="..." height="200px">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Deposit</h3>
+                    <form>
+                        <div class="mb-3">
+                            
+                            <input type="text" id="damt" placeholder="Enter Amount" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="mb-3">
+                            
+                            <input type="password" id="dpswd" placeholder="Password"  class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <div class="text-center"> <button type="submit" class="btn btn-primary">Deposit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="./images/withraw.avif" class="card-img-top" alt="..." height="200px">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Withdraw</h3>
+                    <form>
+                        <div class="mb-3">
+                            
+                            <input type="text" id="wamt" placeholder="Enter Amount" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="mb-3">
+                            
+                            <input type="password" id="wpswd" placeholder="Enter Your Password"  class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <div class="text-center"> <button type="submit" class="btn btn-primary" onclick="withdraw()">Withdraw</button></div>
+                    </form>
+                </div>
+            </div>
+
+ 
+        </div>
+
+    </div>
+
+
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+        var acno=urlParams.get('key');
+        console.log(acno);
+
+        data=localStorage.getItem(acno);
+        acc=JSON.parse(localStorage.getItem(data))
+        console.log(acc);
+   
+head1.innerHTML=`Welcome ${acc.data}`
+
+
+    function withdraw() {
+        
+        if(lpswd.value==acc.pswd)
+                {
+              
+                  acc.bal+=wamt.value;
+
+                 const modacc=JSON.stringify(acc);
+                 localStorage.setItem('acno',acc);
+                 alert("updated")
+                }
+
+        
+    }
+</script>
+
+
+
+</body>
+
+</html>

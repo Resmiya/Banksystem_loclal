@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="login">
+    <section>
+        <form action="">
+            <div class="text-center "><a href="./index.html"><img class="w-50"
+                        src="./images/—Pngtree—mobile banking handphone bank transfer_8447583.png" alt=""></a></div>
+            <div class="inputbox">
+
+                <input type="text" id="lacno">
+                <label>Account Number</label>
+            </div>
+
+            <div class="inputbox">
+
+                <input type="password" id="lpswd">
+                <label>Password</label>
+            </div>
+
+            <div class="forget">
+                <label for=""><input type="checkbox">Remember Me</label>
+                <a href="#">Forget Password?</a>
+            </div>
+
+            <button class="btlog" type="submit" onclick="acsign()">Log in</button>
+
+            <div class="register">
+                <p>Don't have a account? <a href="./signup.html">Register</a></p>
+            </div>
+
+        </form>
+    </section>
+
+    <script>
+        function acsign() {
+
+            var key = lacno.value
+            if (key in localStorage) {
+                alert("ok")
+                acc = JSON.parse(localStorage.getItem(key))
+                
+                console.log(acc);
+                if (lpswd.value == acc.pswd) {
+                    alert("Sign in Successfully")
+                    // window.location.href="services.html"
+                    window.location.href ="services.html?key="+ encodeURIComponent(key);
+
+                }
+
+            }
+            else {
+                alert("Invalid account number")
+            }
+            
+        }
+
+    </script>
+
+</body>
+
+</html>

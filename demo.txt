@@ -1,0 +1,22 @@
+🏦 Create a Responsive Bank Management Webpage
+
+🛠 Tech Stack:
+
+HTML
+CSS
+JavaScript   
+                                                                                                                                                                                           
+💼 Operations:
+
+User Login
+User Registration
+Deposit Funds
+Withdraw Funds
+
+📱 Responsive Webpage:
+The application will be designed to be responsive on various devices, ensuring optimal user experience across different screen sizes.
+
+🔗 Live Demo: https://bank-aswin.netlify.app/
+
+📅 Dead Line
+9 - Feb - 2024
