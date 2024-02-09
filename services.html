@@ -12,7 +12,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
 
-
+    <script src="./script.js"></script>>
 
 </head>
 
@@ -34,14 +34,16 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <buttom class="btn btn-outline-light me-2 active">Services</buttom>
-                    <button class="btn btn-outline-light me-2">Settings</button>
-                    <button class="btn btn-outline-light me-4">Logout</button>
+                    <a class="btn btn-outline-light me-2" href="#">Settings</a>
+                    <button class="btn btn-outline-light me-4" onclick="logout()">Logout</button>
                 </form>
             </div>
         </div>
     </nav>
     <!-- ------------------------------------------------------------- -->
-    <div class="text-center mt-4"><h2 id="head1">Welcome username</h2></div>
+    <div class="text-center mt-4">
+        <h2 id="head1">Welcome username</h2>
+    </div>
     <!--  -->
     <div class="row row-cols-1 row-cols-md-2 g-4 mx-5 mt-2 mb-5">
         <div class="col">
@@ -49,20 +51,20 @@
                 <img src="./images/deposit2.avif" class="card-img-top" alt="..." height="200px">
                 <div class="card-body">
                     <h3 class="card-title text-center">Deposit</h3>
-                    <form>
+                    <div>
                         <div class="mb-3">
-                            
-                            <input type="text" id="damt" placeholder="Enter Amount" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+
+                            <input type="text" id="damt" placeholder="Enter Amount" class="form-control">
 
                         </div>
                         <div class="mb-3">
-                            
-                            <input type="password" id="dpswd" placeholder="Password"  class="form-control" id="exampleInputPassword1">
+
+                            <input type="password" id="dpswd" placeholder="Password" class="form-control">
                         </div>
 
-                        <div class="text-center"> <button type="submit" class="btn btn-primary">Deposit</button></div>
-                    </form>
+                        <div class="text-center"> <button onclick="deposit()" class="btn btn-primary">Deposit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,56 +73,31 @@
                 <img src="./images/withraw.avif" class="card-img-top" alt="..." height="200px">
                 <div class="card-body">
                     <h3 class="card-title text-center">Withdraw</h3>
-                    <form>
+                    <div>
                         <div class="mb-3">
-                            
-                            <input type="text" id="wamt" placeholder="Enter Amount" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+
+                            <input type="text" id="wamt" placeholder="Enter Amount" class="form-control">
 
                         </div>
                         <div class="mb-3">
-                            
-                            <input type="password" id="wpswd" placeholder="Enter Your Password"  class="form-control" id="exampleInputPassword1">
+
+                            <input type="password" id="wpswd" placeholder="Enter Your Password" class="form-control">
                         </div>
 
-                        <div class="text-center"> <button type="submit" class="btn btn-primary" onclick="withdraw()">Withdraw</button></div>
-                    </form>
+                        <div class="text-center"> <button class="btn btn-primary" onclick="withdraw()">Withdraw</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
- 
+
         </div>
 
     </div>
-
-
-<script>
-    var urlParams = new URLSearchParams(window.location.search);
-        var acno=urlParams.get('key');
-        console.log(acno);
-
-        data=localStorage.getItem(acno);
-        acc=JSON.parse(localStorage.getItem(data))
-        console.log(acc);
-   
-head1.innerHTML=`Welcome ${acc.data}`
-
-
-    function withdraw() {
-        
-        if(lpswd.value==acc.pswd)
-                {
-              
-                  acc.bal+=wamt.value;
-
-                 const modacc=JSON.stringify(acc);
-                 localStorage.setItem('acno',acc);
-                 alert("updated")
-                }
-
-        
-    }
-</script>
+    <!-- -------------------- -->
+    <div class="text-center">
+        <h2 id="cbal"></h2>
+    </div>
 
 
 

@@ -13,22 +13,23 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>>
 </head>
 
 <body class="login">
     <section>
-        <form action="">
+        <div class="text-center">
             <div class="text-center "><a href="./index.html"><img class="w-50"
                         src="./images/—Pngtree—mobile banking handphone bank transfer_8447583.png" alt=""></a></div>
             <div class="inputbox">
 
-                <input type="text" id="lacno">
+                <input type="text" id="acno">
                 <label>Account Number</label>
             </div>
 
             <div class="inputbox">
 
-                <input type="password" id="lpswd">
+                <input type="password" id="pswd">
                 <label>Password</label>
             </div>
 
@@ -37,39 +38,15 @@
                 <a href="#">Forget Password?</a>
             </div>
 
-            <button class="btlog" type="submit" onclick="acsign()">Log in</button>
+            <button class="btlog" type="submit" onclick="login()">Log in</button>
 
             <div class="register">
                 <p>Don't have a account? <a href="./signup.html">Register</a></p>
             </div>
 
-        </form>
+        </div>
     </section>
 
-    <script>
-        function acsign() {
-
-            var key = lacno.value
-            if (key in localStorage) {
-                alert("ok")
-                acc = JSON.parse(localStorage.getItem(key))
-                
-                console.log(acc);
-                if (lpswd.value == acc.pswd) {
-                    alert("Sign in Successfully")
-                    // window.location.href="services.html"
-                    window.location.href ="services.html?key="+ encodeURIComponent(key);
-
-                }
-
-            }
-            else {
-                alert("Invalid account number")
-            }
-            
-        }
-
-    </script>
 
 </body>
 
